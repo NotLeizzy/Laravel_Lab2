@@ -1,0 +1,469 @@
+/* ===========================
+   Color Variables & Theme
+   =========================== */
+:root {
+  --bg-color: #1a1c1e;        /* Softer dark gray, not pitch black */
+  --card-bg: #212427;         /* Slightly lighter than background */
+  --text-main: #e2e8f0;       /* Soft white/gray for readability */
+  --text-muted: #94a3b8;      /* For descriptions */
+  
+  /* Feature Colors (Muted & Desaturated) */
+  --blue-soft: #5e81ac;       /* Muted Steel Blue */
+  --green-soft: #81a1c1;      /* Frosty Blue-Green */
+  --purple-soft: #b48ead;     /* Muted Dusty Rose/Purple */
+  
+  /* Additional colors for actions */
+  --success: #4ade80;         /* Green */
+  --danger: #f87171;          /* Red */
+  --warning: #facc15;         /* Yellow */
+}
+
+/* ===========================
+   General Layout & Typography
+   =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-main);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  color: var(--blue-soft);
+  border-bottom: 2px solid rgba(94, 129, 172, 0.3);
+  padding-bottom: 10px;
+  font-size: 2rem;
+}
+
+h2 {
+  color: var(--blue-soft);
+  font-size: 1.5rem;
+}
+
+h3 {
+  color: var(--green-soft);
+  font-size: 1.25rem;
+}
+
+p {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+/* ===========================
+   Container & Card Styling
+   =========================== */
+.container {
+  max-width: 900px;
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 2rem !important;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   Form Styling
+   =========================== */
+.mb-4 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(94, 129, 172, 0.4) !important;
+  border-radius: 8px !important;
+  padding: 12px !important;
+  color: var(--text-main) !important;
+  width: 100%;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--blue-soft) !important;
+  box-shadow: 0 0 0 3px rgba(94, 129, 172, 0.2);
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Placeholder styling */
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* ===========================
+   Button Styling
+   =========================== */
+button,
+.btn,
+.btn-primary,
+.bg-blue-500,
+.bg-blue-600,
+.bg-blue-700 {
+  background-color: var(--blue-soft) !important;
+  color: var(--text-main) !important;
+  padding: 12px 24px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  border: none;
+  cursor: pointer;
+  transition: filter 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
+}
+
+button:hover,
+.btn:hover,
+.btn-primary:hover,
+.bg-blue-500:hover,
+.bg-blue-600:hover,
+.bg-blue-700:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+button:active,
+.btn:active,
+.btn-primary:active {
+  transform: translateY(0);
+  filter: brightness(0.95);
+}
+
+/* Button Variants */
+.bg-green-500,
+.bg-green-600,
+.bg-green-700 {
+  background-color: var(--green-soft) !important;
+}
+
+.bg-green-500:hover,
+.bg-green-600:hover,
+.bg-green-700:hover {
+  filter: brightness(1.1);
+}
+
+.bg-purple-500,
+.bg-purple-600,
+.bg-purple-700 {
+  background-color: var(--purple-soft) !important;
+}
+
+.bg-purple-500:hover,
+.bg-purple-600:hover,
+.bg-purple-700:hover {
+  filter: brightness(1.1);
+}
+
+.bg-red-600,
+.bg-red-700,
+.text-red-600 {
+  background-color: var(--danger) !important;
+  color: white !important;
+}
+
+.bg-red-600:hover,
+.bg-red-700:hover {
+  filter: brightness(1.1);
+}
+
+.bg-gray-400,
+.bg-gray-500 {
+  background-color: var(--text-muted) !important;
+  color: var(--bg-color) !important;
+}
+
+.bg-gray-400:hover,
+.bg-gray-500:hover {
+  filter: brightness(1.1);
+}
+
+/* ===========================
+   Link & Text Styling
+   =========================== */
+a {
+  color: var(--blue-soft);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--green-soft);
+  text-decoration: underline;
+}
+
+/* Link variants */
+.text-blue-600,
+.text-blue-800 {
+  color: var(--blue-soft) !important;
+}
+
+.text-green-600,
+.text-green-800 {
+  color: var(--green-soft) !important;
+}
+
+.text-purple-600,
+.text-purple-800 {
+  color: var(--purple-soft) !important;
+}
+
+.text-red-600,
+.text-red-800 {
+  color: var(--danger) !important;
+}
+
+.text-gray-600,
+.text-gray-400 {
+  color: var(--text-muted) !important;
+}
+
+/* ===========================
+   Card List Styling
+   =========================== */
+.border.p-4.mb-4 {
+  background-color: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 12px;
+  padding: 1.5rem !important;
+  margin-bottom: 1rem !important;
+  transition: all 0.3s ease;
+}
+
+.border.p-4.mb-4:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  border-color: rgba(94, 129, 172, 0.3);
+}
+
+.border.p-4.mb-4 h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  color: var(--blue-soft);
+}
+
+.border.p-4.mb-4 p {
+  margin-bottom: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ===========================
+   Status Badges
+   =========================== */
+.px-3.py-1.rounded.text-sm {
+  padding: 0.5rem 1rem !important;
+  border-radius: 6px !important;
+  font-weight: 500;
+  font-size: 0.875rem !important;
+}
+
+.bg-green-100.text-green-800 {
+  background-color: rgba(74, 222, 128, 0.2) !important;
+  color: #4ade80 !important;
+}
+
+.bg-red-100.text-red-800 {
+  background-color: rgba(248, 113, 113, 0.2) !important;
+  color: #f87171 !important;
+}
+
+/* ===========================
+   Table Styling
+   =========================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+thead {
+  background-color: rgba(94, 129, 172, 0.15);
+  border-bottom: 2px solid rgba(94, 129, 172, 0.3);
+}
+
+thead th {
+  color: var(--blue-soft);
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+}
+
+tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: rgba(94, 129, 172, 0.1);
+}
+
+tbody td {
+  padding: 1rem;
+  color: var(--text-muted);
+}
+
+/* ===========================
+   Scrollbar Styling
+   =========================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue-soft);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green-soft);
+}
+
+/* ===========================
+   Utility Classes
+   =========================== */
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.max-w-7xl {
+  max-width: 80rem;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+  }
+  
+  button,
+  .btn,
+  .btn-primary {
+    padding: 10px 16px !important;
+    font-size: 0.9rem;
+  }
+  
+  table {
+    font-size: 0.9rem;
+  }
+  
+  thead th,
+  tbody td {
+    padding: 0.75rem;
+  }
+}
+textarea::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
+}
